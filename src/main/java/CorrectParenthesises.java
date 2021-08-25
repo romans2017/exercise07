@@ -3,14 +3,8 @@ import java.util.*;
 
 public class CorrectParenthesises {
 
-    private final Stack<String> stringStack;
-
-    public CorrectParenthesises() {
-        stringStack = new Stack<>();
-    }
-
-    public boolean analyze(String s) {
-
+    public static boolean analyze(String s) {
+        Stack<String> stringStack = new Stack<>();
         Map<String, String> parenthesises = Map.of("[", "]", "(", ")", "{", "}");
         for (int i = 0; i < s.length(); i++) {
             String stackValue = null;
@@ -34,7 +28,6 @@ public class CorrectParenthesises {
     }
 
     public static void main(String[] args) {
-        CorrectParenthesises correctParenthesises = new CorrectParenthesises();
-        System.out.println(correctParenthesises.analyze("[]"));
+        System.out.println(CorrectParenthesises.analyze("[(([])())]"));
     }
 }
